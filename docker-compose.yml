@@ -7,21 +7,6 @@ volumes:
   redis_queue_data: {}
 
 services:
-   app:
-      build:
-        context: .
-        dockerfile: Dockerfile.developers
-        args:
-          - APP_KEY=${APP_KEY}
-      container_name: back-php-${ENVIRONMENT}
-      restart: always
-      expose:
-        - 9000
-      deploy:
-        resources:
-          limits:
-            cpus: '3'
-            memory: 2G
   redis-queue:
     image: redis:7.0-alpine
     container_name: image-builder-redis-queue-${ENVIRONMENT}
