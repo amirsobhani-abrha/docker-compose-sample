@@ -8,6 +8,11 @@ volumes:
 
 services:
   redis-queue:
+   build:
+      context: .
+      dockerfile: Dockerfile.developers
+      args:
+        - APP_KEY=${APP_KEY}
     image: redis:7.0-alpine
     container_name: image-builder-redis-queue-${ENVIRONMENT}
     restart: always
