@@ -19,8 +19,6 @@ services:
       - image-builder
   wordpress:
     image: wordpress:latest
-    volumes:
-      - wp_data:/var/www/html
     ports:
       - 80
     restart: always
