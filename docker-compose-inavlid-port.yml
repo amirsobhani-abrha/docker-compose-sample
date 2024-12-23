@@ -12,11 +12,6 @@ services:
     container_name: image-builder-redis-queue-${ENVIRONMENT}
     restart: always
     command: redis-server /usr/local/etc/redis/redis.conf
-    healthcheck:
-      test: ["CMD-SHELL", "REDISCLI_AUTH=$REDIS_PASSWORD redis-cli -h localhost ping | grep PONG || exit 1"]
-      interval: 5s
-      timeout: 5s
-      retries: 3
     volumes:
       - redis_queue_data:/data
       - ./redis/redis-queue-developer.conf:/usr/local/etc/redis/redis.conf
