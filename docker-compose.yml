@@ -31,6 +31,9 @@ services:
     restart: always
     volumes:
       - mysql_data:/var/lib/mysql
+    expose:
+      - 3306
+      - 33060
     ports:
       - ${DB_PORT_FORWARD:-3306}:${DB_PORT:-3306}
     environment:
