@@ -36,6 +36,7 @@ services:
       - 33060
     ports:
       - ${DB_PORT_FORWARD:-3306}:${DB_PORT:-3306}
+    env_file: '.env_test'
     environment:
       MYSQL_DATABASE: ${DB_NAME}
       MYSQL_USER: ${DB_USER}
