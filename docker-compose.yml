@@ -9,7 +9,7 @@ volumes:
 services: 
   redis-queue:
     image: redis:7.0-alpine
-    container_name: image-builder-redis-queue-${ENVIRONMENT:-dev}
+    container_name: image-builder-redis-queue-${ENVIRONMENT}
     restart: always
     command: redis-server /usr/local/etc/redis/redis.conf
     ports:
