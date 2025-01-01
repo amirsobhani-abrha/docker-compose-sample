@@ -29,7 +29,7 @@ services:
       - WORDPRESS_DB_NAME=wordpress
   mysql:
     image: mysql:8.0
-    container_name: image-builder-mysql-${ENVIRONMENT}
+    container_name: image-builder-mysql-${ENVIRONMENT:-dev}
     restart: always
     volumes:
       - mysql_data:/var/lib/mysql
