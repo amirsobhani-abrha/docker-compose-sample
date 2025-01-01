@@ -20,7 +20,7 @@ services:
   wordpress:
     image: wordpress:latest
     ports:
-      - 11:80
+      - 5:80
     restart: always
     environment:
       - WORDPRESS_DB_HOST=db
