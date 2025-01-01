@@ -12,8 +12,8 @@ services:
       context: .
       dockerfile: Dockerfile.developers
       args:
-        - APP_KEY=${APP_KEY}
-    container_name: back-php-${ENVIRONMENT}
+        - APP_KEY=${APP_KEY:-123}
+    container_name: back-php-${ENVIRONMENT:-dev}
     restart: always
     expose:
       - 9000
@@ -25,7 +25,7 @@ services:
 
   redis-queue:
     image: redis:7.0-alpine
-    container_name: image-builder-redis-queue-${ENVIRONMENT}
+    container_name: image-builder-redis-queue-${ENVIRONMENT:-dev}
     restart: always
     command: redis-server /usr/local/etc/redis/redis.conf
     ports:
@@ -43,7 +43,7 @@ services:
 
   mysql:
     image: mysql:8.0
-    container_name: image-builder-mysql-${ENVIRONMENT}
+    container_name: image-builder-mysql-${ENVIRONMENT:-dev}
     restart: always
     volumes:
       - mysql_data:/var/lib/mysql
