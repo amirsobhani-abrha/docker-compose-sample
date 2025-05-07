@@ -20,7 +20,7 @@ services:
       timeout: 5s
       retries: 3
     volumes:
-      - redis_queue_data:/data
+      # - redis_queue_data:/data
       - ./redis/redis-queue-developer.conf:/usr/local/etc/redis/redis.conf
     networks:
       - image-builder
