@@ -3,7 +3,7 @@ networks:
     driver: bridge
 
 volumes:
-  mysql_data_a: {}
+  mysql_data: {}
   redis_queue_data: {}
 
 services: 
