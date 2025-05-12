@@ -3,7 +3,7 @@ networks:
     driver: bridge
 
 volumes:
-  mysql_data: {}
+  mysql_data_a: {}
   redis_queue_data: {}
 
 services: 
@@ -21,7 +21,7 @@ services:
       retries: 3
     volumes:
       - redis_queue_data:/data
-      - ./redis/redis-queue-developer.conf:/usr/local/etc/redis/redis.conf
+    #  - ./redis/redis-queue-developer.conf:/usr/local/etc/redis/redis.conf
     networks:
       - image-builder
 
