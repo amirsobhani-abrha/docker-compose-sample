@@ -4,7 +4,7 @@ networks:
 
 volumes:
   mysql_data: {}
-  redis_queue_data: {}
+  redis_queue_data_1: {}
 
 services: 
   redis-queue:
